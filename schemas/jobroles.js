@@ -61,4 +61,54 @@ const allJobRoleSchema = {
   required: ["status", "message", "data"],
 };
 
-export { allJobRoleSchema };
+const jobRoleByParamsSchema = {
+  type: "object",
+  properties: {
+    status: {
+      type: "number",
+    },
+    message: {
+      type: "null",
+    },
+    data: {
+      anyOf: [
+        {
+          type: "object",
+          properties: {
+            id: {
+              type: "number",
+            },
+            name: {
+              type: "string",
+            },
+            htag: {
+              type: "number",
+            },
+          },
+          required: ["id", "name", "htag"],
+        },
+        {
+          type: "array",
+          items: {
+            type: "object",
+            properties: {
+              id: {
+                type: "number",
+              },
+              name: {
+                type: "string",
+              },
+              htag: {
+                type: "number",
+              },
+            },
+            required: ["id", "name", "htag"],
+          },
+        },
+      ],
+    },
+  },
+  required: ["status", "message", "data"],
+};
+
+export { allJobRoleSchema, jobRoleByParamsSchema };
