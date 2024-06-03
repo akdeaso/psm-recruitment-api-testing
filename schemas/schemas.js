@@ -1,4 +1,4 @@
-const allJobRoleSchema = {
+const allSchema = {
   type: "object",
   properties: {
     status: {
@@ -61,7 +61,7 @@ const allJobRoleSchema = {
   required: ["status", "message", "data"],
 };
 
-const jobRoleByParamsSchema = {
+const byParamsSchema = {
   type: "object",
   properties: {
     status: {
@@ -111,4 +111,4 @@ const jobRoleByParamsSchema = {
   required: ["status", "message", "data"],
 };
 
-export { allJobRoleSchema, jobRoleByParamsSchema };
+export { allSchema, byParamsSchema };

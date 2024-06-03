@@ -5,19 +5,19 @@ import { allSchema, byParamsSchema } from "../schemas/schemas.js";
 
 use(chaiJsonSchema);
 
-describe("Test Cases for Job Role", () => {
-  it("should get all job roles with required params", async () => {
-    const res = await api.get("/jobrole").query({ page: 1, size: 10 });
+describe("Test Cases for Software Tool", () => {
+  it("should get all software tools with required params", async () => {
+    const res = await api.get("/swtool").query({ page: 1, size: 10 });
     expect(res.status).to.eql(200);
     expect(res.body).to.be.jsonSchema(allSchema);
   });
-  it("should get job role by id", async () => {
-    const res = await api.get("/jobrole/byid/3");
+  it("should get software tool by id", async () => {
+    const res = await api.get("/swtool/byid/3");
     expect(res.status).to.eql(200);
     expect(res.body).to.be.jsonSchema(byParamsSchema);
   });
-  it("should get job role by name", async () => {
-    const res = await api.get("/jobrole/developer");
+  it("should get software tool by name", async () => {
+    const res = await api.get("/swtool/java");
     expect(res.status).to.eql(200);
     expect(res.body).to.be.jsonSchema(byParamsSchema);
   });
