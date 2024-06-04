@@ -21,4 +21,27 @@ describe("Test Cases for Software Tool", () => {
     expect(res.status).to.eql(200);
     expect(res.body).to.be.jsonSchema(byParamsSchema);
   });
+  it("should create new software tool", async () => {
+    const reqBody = {
+      name: "RSpec",
+    };
+    const res = await api.post("/swtool").send(reqBody);
+    expect(res.status).to.eql(200);
+    expect(res.body.data.name).to.eql(reqBody.name);
+  });
+  it("should update software tool by id", async () => {
+    const reqBody = {
+      id: 204,
+      name: "Harusnya Keupdate",
+      htag: 256,
+    };
+    const res = await api.put("/swtool").send(reqBody);
+    expect(res.status).to.eql(200);
+    expect(res.body.data.name).to.eql(reqBody.name);
+  });
+  it("should delete software tool by id", async () => {
+    const res = await api.delete("/swtool/206");
+    expect(res.status).to.eql(200);
+    expect(res.body.data).to.eql("true");
+  });
 });

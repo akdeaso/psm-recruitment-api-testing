@@ -21,4 +21,27 @@ describe("Test Cases for Job Role", () => {
     expect(res.status).to.eql(200);
     expect(res.body).to.be.jsonSchema(byParamsSchema);
   });
+  it("should create new job role", async () => {
+    const reqBody = {
+      name: "Wordpress Developer",
+    };
+    const res = await api.post("/jobrole").send(reqBody);
+    expect(res.status).to.eql(200);
+    expect(res.body.data.name).to.eql(reqBody.name);
+  });
+  it("should update job role by id", async () => {
+    const reqBody = {
+      id: 61,
+      name: "Wordpress Developer 2",
+      htag: 255,
+    };
+    const res = await api.put("/jobrole").send(reqBody);
+    expect(res.status).to.eql(200);
+    expect(res.body.data.name).to.eql(reqBody.name);
+  });
+  it("should delete job role by id", async () => {
+    const res = await api.delete("/jobrole/61");
+    expect(res.status).to.eql(200);
+    expect(res.body.data).to.eql("true");
+  });
 });
