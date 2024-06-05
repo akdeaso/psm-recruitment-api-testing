@@ -1,4 +1,4 @@
-const allSchema = {
+const referensiAllSchema = {
   type: "object",
   properties: {
     status: {
@@ -61,7 +61,7 @@ const allSchema = {
   required: ["status", "message", "data"],
 };
 
-const byParamsSchema = {
+const referensiByParamsSchema = {
   type: "object",
   properties: {
     status: {
@@ -111,4 +111,4 @@ const byParamsSchema = {
   required: ["status", "message", "data"],
 };
 
-export { allSchema, byParamsSchema };
+export { referensiAllSchema, referensiByParamsSchema };
