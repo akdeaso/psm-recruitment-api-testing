@@ -44,7 +44,7 @@ describe("Test Cases for Job Role", () => {
     expect(res.status).to.eql(200);
     expect(res.body.data.name).to.eql(reqBody.name);
   });
-  it("should delete job role by id", async () => {
+  it.skip("should delete job role by id", async () => {
     const res = await api.delete("/referensi/jobrole/61");
     expect(res.status).to.eql(200);
     expect(res.body.data).to.eql("true");

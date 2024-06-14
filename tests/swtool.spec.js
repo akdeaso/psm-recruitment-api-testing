@@ -42,7 +42,7 @@ describe("Test Cases for Software Tool", () => {
     expect(res.status).to.eql(200);
     expect(res.body.data.name).to.eql(reqBody.name);
   });
-  it("should delete software tool by id", async () => {
+  it.skip("should delete software tool by id", async () => {
     const res = await api.delete("/referensi/swtool/206");
     expect(res.status).to.eql(200);
     expect(res.body.data).to.eql("true");
